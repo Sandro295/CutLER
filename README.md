@@ -48,7 +48,7 @@ Firstly clone this repository recursively
 git clone https://github.com/Sandro295/CutLER.git --recursive
 cd CutLER
 ```
-Make sure you have Docker installed and your docker daemon is running  
+Make sure you have Docker installed and your Docker daemon is running  
 Then build an image
 ```
 docker build -t cutler .
