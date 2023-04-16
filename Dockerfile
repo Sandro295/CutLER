@@ -9,11 +9,10 @@ WORKDIR /home/docker_user
 ADD CutLER ./CutLER
 ADD detectron2 ./detectron2
 
-
 # SHELL ["/bin/bash", "-i", "-c"] 
 
-RUN apt-get update && apt-get -y install libgl1-mesa-glx
-RUN python3 --version
+RUN apt-get -y install libgl1-mesa-glx
+
 RUN python3.8 -m venv cutler
 # RUN conda create --name cutler python=3.8 -y
 # RUN . /root/miniconda3/etc/profile.d/conda.sh && conda activate cutler
@@ -28,7 +27,6 @@ RUN . cutler/bin/activate && pip install torch==1.8.1+cpu torchvision==0.9.1+cpu
 RUN mkdir -p images/reference && mkdir -p images/outputs/output1 && mkdir -p images/outputs/output2
 
 COPY diff.jpg images/reference
-
 COPY entrypoint.sh test.py testcfg.ini ./
 
 RUN chmod +x entrypoint.sh
