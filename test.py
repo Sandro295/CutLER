@@ -42,19 +42,16 @@ def main():
     mask2 = cv2.threshold(your_diff, 0, 255, cv2.THRESH_BINARY)[1]
 
 
-# not sure here yet
     difference = cv2.subtract(mask1, mask2)[1]
 
-    print(difference)
+    # print(difference)
     final_diff = cv2.countNonZero(difference)
-    print(final_diff)
+    # print(final_diff)
 
     if difference.max() == 0:
         print("Test passed")
     else:
         print("Test failed")
-
-
 
 if __name__ == "__main__":
     main()

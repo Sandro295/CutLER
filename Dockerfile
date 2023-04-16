@@ -11,7 +11,7 @@ ADD detectron2 ./detectron2
 
 # SHELL ["/bin/bash", "-i", "-c"] 
 
-RUN apt-get -y install libgl1-mesa-glx
+RUN apt-get update && apt-get -y install libgl1-mesa-glx
 
 RUN python3.8 -m venv cutler
 # RUN conda create --name cutler python=3.8 -y
