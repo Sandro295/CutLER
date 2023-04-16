@@ -30,7 +30,6 @@ def main():
     output2 =   config.get('jpeg_paths', 'output2')
     your_diff_name = 'your_diff.jpg'
 
-    # image_ref = cv2.imread(os.path.join(reference, "demo1.jpg"), cv2.IMREAD_GRAYSCALE)
     image1 = cv2.imread(output1)
     image2 = cv2.imread(output2)
 
@@ -44,9 +43,7 @@ def main():
 
     difference = cv2.subtract(mask1, mask2)[1]
 
-    # print(difference)
-    final_diff = cv2.countNonZero(difference)
-    # print(final_diff)
+    # final_diff = cv2.countNonZero(difference)
 
     if difference.max() == 0:
         print("Test passed")
